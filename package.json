@@ -4,15 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild index.js --bundle  --outfile=bundle.js --watch"
+    "start": "bundle.js",
+    "test": "jest",
+    "build": "esbuild main.js --bundle  --outfile=bundle.js --watch"
   },
   "keywords": [],
-  "author": "AnnC",
+  "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "esbuild": "^0.14.2",
-    "jest": "^27.4.3",
-    "jest-fetch-mock": "^3.0.3"
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^9.3.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "fast-text-encoding": "^1.0.6",
+    "http-server": "^14.1.1",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jest-fetch-mock": "^3.0.3",
+    "jsdom": "^22.1.0",
+    "jsdom-global": "^3.0.2"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   }
 }
