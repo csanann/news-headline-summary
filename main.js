@@ -15,7 +15,8 @@ window.addEventListener('load', () => {
     // onSuccess
     (data) => {
         newsModel.setNews(data);
-        newsView.render(newsModel.getNews());
+        newsView.displayNews();
+        // newsView.render(newsModel.getNews());
     },
     // onError
     (error) => {
