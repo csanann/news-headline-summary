@@ -1,4 +1,4 @@
-//files: newsView.js
+//files: src/newsView.js
 
 // This class provides a view for the news data
 class NewsView {
@@ -6,7 +6,7 @@ class NewsView {
   constructor(model, client) {
     this.model = model;
     this.client = client;
-    // this.bindSubmit();
+    this.bindSubmit(); 
   }
 
   // The bindSubmit method adds an event listener to a form for submitting a search query
@@ -19,17 +19,17 @@ class NewsView {
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
         const searchQuery = document.getElementById('search-input').value; 
-        // // Now use the searchQuery to fetch relevant news
-        // this.client.searchNews(searchQuery,
-        //   (data) => {
-        //     this.model.setNews(data);
-        //     this.displayNews();
-        //   },
-        //   (error) => {
-        //     console.error("Error fetching news", error);
-        //     this.displayError();
-        //   }
-        // );
+        // Now use the searchQuery to fetch relevant news
+        this.client.searchNews(searchQuery,
+          (data) => {
+            this.model.setNews(data);
+            this.displayNews();
+          },
+          (error) => {
+            console.error("Error fetching news", error);
+            this.displayError();
+          }
+        );
       });
     } else {
       // If the form doesn't exist, log an error
