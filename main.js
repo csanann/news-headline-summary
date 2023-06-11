@@ -10,6 +10,10 @@ const newsModel = new NewsModel();
 const newsView = new NewsView(newsModel, newsClient);
 
 window.addEventListener('load', () => {
+  /// bind the submit event for the search feature
+  //this ensure that when the window loads, 
+  //the function attaches the event listener for the submit event and fetches the news from the api
+  newsView.bindSubmit
   // Fetching data from the API
   newsClient.getNews(
     // onSuccess
